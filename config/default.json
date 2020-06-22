@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://phila:phila123@project1-py78l.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "jwtSecret": "secret"
+}
