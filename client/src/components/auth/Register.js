@@ -52,7 +52,7 @@ const Register = (props) => {
       <h1>
         Account <span className="text-primary">Register</span>
       </h1>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} style={{ color: "white" }}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -62,10 +62,12 @@ const Register = (props) => {
             value={name}
             onChange={onChange}
             required
+            placeholder="e.g Philani Sithembiso Ndhlela"
           />
         </div>
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
+
           <input
             id="email"
             type="email"
@@ -73,6 +75,7 @@ const Register = (props) => {
             value={email}
             onChange={onChange}
             required
+            placeholder="e.g philanisithembiso@gmail.com"
           />
         </div>
         <div className="form-group">
@@ -85,6 +88,7 @@ const Register = (props) => {
             onChange={onChange}
             required
             minLength="6"
+            placeholder="minimum is 6 characters"
           />
         </div>
         <div className="form-group">
@@ -97,6 +101,7 @@ const Register = (props) => {
             onChange={onChange}
             required
             minLength="6"
+            placeholder="must be the same..."
           />
         </div>
         <input

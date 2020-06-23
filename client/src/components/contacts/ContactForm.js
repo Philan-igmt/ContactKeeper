@@ -47,7 +47,7 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <h2 className="text-primary">
+      <h2 style={{ color: "white" }} className="text-danger">
         {current ? "Edit Contact" : "Add Contact"}
       </h2>
       <input
@@ -56,12 +56,14 @@ const ContactForm = () => {
         name="name"
         value={name}
         onChange={onChange}
+        required
       />
       <input
         type="email"
         placeholder="Email"
         name="email"
         value={email}
+        required
         onChange={onChange}
       />
       <input
@@ -70,24 +72,27 @@ const ContactForm = () => {
         name="phone"
         value={phone}
         onChange={onChange}
+        required
       />
-      <h5>Contact Type</h5>
+      <h5 style={{ color: "white" }}>Contact Type</h5>
       <input
         type="radio"
         name="type"
         value="personal"
         checked={type === "personal"}
         onChange={onChange}
+        required
       />{" "}
-      Personal{" "}
+      <span style={{ color: "white" }}>Personal</span>{" "}
       <input
+        required
         type="radio"
         name="type"
         value="professional"
         checked={type === "professional"}
         onChange={onChange}
       />{" "}
-      Professional
+      <span style={{ color: "white" }}>Professional</span>
       <div>
         <input
           type="submit"
