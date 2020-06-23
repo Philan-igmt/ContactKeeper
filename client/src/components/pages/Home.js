@@ -1,22 +1,20 @@
-import React, { useContext } from "react";
-import { Route, Redirect } from "react-router-dom";
-import AuthContext from "../../context/auth/authContext";
+import React from "react";
+import Contacts from "../contacts/Contacts";
+import ContactForm from "../contacts/ContactForm";
+import ContactFilter from "../contacts/ContactFilter";
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  const authContext = useContext(AuthContext);
-  const { isAuthenticated, loading } = authContext;
+const Home = () => {
   return (
-    <Route
-      {...rest}
-      render={(props) =>
-        !isAuthenticated && !loading ? (
-          <Redirect to="/login" />
-        ) : (
-          <Component {...props} />
-        )
-      }
-    />
+    <div className="grid-2">
+      <div>
+        <ContactForm />
+      </div>
+      <div>
+        <ContactFilter />
+        <Contacts />
+      </div>
+    </div>
   );
 };
 
-export default PrivateRoute;
+export default Home;

@@ -7,20 +7,16 @@ import ContactContext from "../../context/contact/contactContext";
 const Navbar = ({ title, icon }) => {
   const authContext = useContext(AuthContext);
   const contactContext = useContext(ContactContext);
-
   const { isAuthenticated, logout, user, loadUser } = authContext;
   const { clearContacts } = contactContext;
-
   useEffect(() => {
     loadUser();
     // eslint-disable-next-line
   }, []);
-
   const onLogout = () => {
     logout();
     clearContacts();
   };
-
   const authLinks = (
     <Fragment>
       <li>Hello {user && user.name}</li>
@@ -32,7 +28,6 @@ const Navbar = ({ title, icon }) => {
       </li>
     </Fragment>
   );
-
   const guestLinks = (
     <Fragment>
       <li>
@@ -43,7 +38,6 @@ const Navbar = ({ title, icon }) => {
       </li>
     </Fragment>
   );
-
   return (
     <div className="navbar bg-primary">
       <h1>
@@ -55,12 +49,10 @@ const Navbar = ({ title, icon }) => {
     </div>
   );
 };
-
 Navbar.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string,
 };
-
 Navbar.defaultProps = {
   title: "Contact Keeper",
   icon: "fas fa-id-card-alt",
